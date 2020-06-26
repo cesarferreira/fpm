@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:fpm/commands/add.dart';
 import 'package:fpm/commands/runner.dart';
+import 'package:fpm/commands/search.dart';
 import 'package:fpm/commands/top.dart';
 import 'package:fpm/utils/logger.dart';
 import 'package:io/ansi.dart';
@@ -13,6 +14,7 @@ Future<void> fpmRunner(List<String> args) async {
 
   runner
     ..addCommand(AddCommand())
+    ..addCommand(SearchCommand())
     ..addCommand(TopCommand());
 
   return await runner.run(args).catchError((exc, st) {

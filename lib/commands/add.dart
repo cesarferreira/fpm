@@ -5,7 +5,6 @@ import 'package:args/command_runner.dart';
 // import 'package:fvm/utils/project_config.dart';
 // import 'package:fvm/utils/version_installer.dart';
 
-/// Installs Flutter SDK
 class AddCommand extends Command {
   // The [name] and [description] properties must be defined by every
   // subclass.
@@ -13,16 +12,16 @@ class AddCommand extends Command {
   final name = 'add';
 
   @override
-  final description = 'add Flutter SDK Version';
+  final description = 'add package SDK Version';
 
   /// Constructor
   AddCommand() {
-    argParser
-      ..addFlag(
-        'skip-setup',
-        help: 'Skips Flutter setup after install',
-        negatable: false,
-      );
+    // argParser
+    //   ..addFlag(
+    //     'skip-setup',
+    //     help: 'Skips Flutter setup after install',
+    //     negatable: false,
+    //   );
   }
 
   @override
