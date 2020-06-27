@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:fpm/commands/add.dart';
+import 'package:fpm/commands/favorites.dart';
 import 'package:fpm/commands/search.dart';
 import 'package:fpm/commands/top.dart';
 import 'package:fpm/utils/logger.dart';
@@ -13,6 +14,7 @@ Future<void> main(List<String> args) async {
   runner
     ..addCommand(AddCommand())
     ..addCommand(SearchCommand())
+    ..addCommand(FavoritesCommand())
     ..addCommand(TopCommand());
 
   return await runner.run(args).catchError((exc, st) {
