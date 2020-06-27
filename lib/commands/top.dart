@@ -15,6 +15,7 @@ class TopCommand extends Command {
 
   @override
   void run() async {
-    parser.parseWebsite('https://pub.dev/packages');
+    var packages = await parser.parseWebsite('https://pub.dev/packages');
+    parser.printShortVersion(packages);
   }
 }

@@ -4,6 +4,8 @@ import 'package:args/command_runner.dart';
 // import 'package:fvm/utils/helpers.dart';
 // import 'package:fvm/utils/project_config.dart';
 // import 'package:fvm/utils/version_installer.dart';
+import 'package:html/parser.dart' show parse;
+import 'package:html/dom.dart';
 
 class AddCommand extends Command {
   // The [name] and [description] properties must be defined by every
@@ -27,6 +29,10 @@ class AddCommand extends Command {
   @override
   void run() async {
     print("im hereee");
+
+     var document = parse(
+      '<body>Hello world! <a href="www.html5rocks.com">HTML5 rocks!');
+  print(document.attributes['href']);
     // Guards.isGitInstalled();
 
     // String version;

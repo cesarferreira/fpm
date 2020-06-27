@@ -27,9 +27,8 @@ class SearchCommand extends Command {
     } else {
       var q = argResults.arguments[0].toLowerCase();
 
-      print(argResults.arguments);
-
-      parser.parseWebsite('https://pub.dev/packages?q=$q');
+      var packages = await parser.parseWebsite('https://pub.dev/packages?q=$q');
+      parser.printShortVersion(packages);
     }
   }
 }
