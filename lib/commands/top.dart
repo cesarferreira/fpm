@@ -1,5 +1,6 @@
 import 'package:args/command_runner.dart';
-import 'package:fpm/parser.dart' as parser;
+import 'package:fpm/parser.dart';
+import 'package:fpm/pretty.printer.dart';
 
 class TopCommand extends Command {
   // The [name] and [description] properties must be defined by every
@@ -8,14 +9,14 @@ class TopCommand extends Command {
   final name = 'top';
 
   @override
-  final description = 'list the top used dart packages';
+  final description = 'List the top used dart packages';
 
   /// Constructor
   TopCommand();
 
   @override
   void run() async {
-    var packages = await parser.parseWebsite('https://pub.dev/packages');
-    parser.printShortVersion(packages);
+    var packages = await Parser.parseWebsite('https://pub.dev/packages');
+    PrettyPrinter.printShortVersion(packages);
   }
 }

@@ -1,14 +1,13 @@
-
 import 'dart:io';
 
 import 'package:fpm/commands/add.dart';
-import 'package:fpm/commands/runner.dart';
 import 'package:fpm/commands/search.dart';
 import 'package:fpm/commands/top.dart';
 import 'package:fpm/utils/logger.dart';
+import 'package:fpm/utils/runner.dart';
 
 /// Runs FVM
-Future<void> fpmRunner(List<String> args) async {
+Future<void> main(List<String> args) async {
   final runner = buildRunner();
 
   runner

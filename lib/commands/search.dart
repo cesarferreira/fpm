@@ -1,5 +1,6 @@
 import 'package:args/command_runner.dart';
-import 'package:fpm/parser.dart' as parser;
+import 'package:fpm/parser.dart';
+import 'package:fpm/pretty.printer.dart';
 
 class SearchCommand extends Command {
   // The [name] and [description] properties must be defined by every
@@ -11,14 +12,7 @@ class SearchCommand extends Command {
   final description = 'Search dart packages';
 
   /// Constructor
-  SearchCommand() {
-    argParser
-      ..addFlag(
-        's',
-        help: 'search',
-        negatable: false,
-      );
-  }
+  SearchCommand() {}
 
   @override
   void run() async {
@@ -27,8 +21,8 @@ class SearchCommand extends Command {
     } else {
       var q = argResults.arguments[0].toLowerCase();
 
-      var packages = await parser.parseWebsite('https://pub.dev/packages?q=$q');
-      parser.printShortVersion(packages);
+      var packages = await Parser.parseWebsite('https://pub.dev/packages?q=$q');
+      PrettyPrinter.printShortVersion(packages);
     }
   }
 }

@@ -14,7 +14,7 @@ class AddCommand extends Command {
   final name = 'add';
 
   @override
-  final description = 'add package SDK Version';
+  final description = 'Add package SDK Version';
 
   /// Constructor
   AddCommand() {
