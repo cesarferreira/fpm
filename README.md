@@ -1,10 +1,10 @@
-# fpm
+# Flutter Package Manager
 
 <!-- ![Pub Version](https://img.shields.io/pub/v/fpm?label=version&style=flat-square)
 [![Maintenance](https://img.shields.io/badge/dynamic/json?color=blue&label=maintenance&query=maintenance&url=http://www.pubscore.gq/all?package=fpm&style=flat-square)](https://pub.dev/help#maintenance)
 [![Health](https://img.shields.io/badge/dynamic/json?color=blue&label=health&query=health&url=http://www.pubscore.gq/all?package=fpm&style=flat-square)](https://pub.dev/help#health)![Coverage](https://raw.githubusercontent.com/leoafarias/fpm/master/coverage_badge.svg?sanitize=true) [![Github All Contributors](https://img.shields.io/github/all-contributors/leoafarias/fpm?style=flat-square)](https://github.com/cesarferreira/fpm/graphs/contributors) [![MIT Licence](https://img.shields.io/github/license/leoafarias/fpm?style=flat-square&longCache=true)](https://opensource.org/licenses/mit-license.php) [![Awesome Flutter](https://img.shields.io/badge/awesome-flutter-purple?longCache=true&style=flat-square)](https://github.com/Solido/awesome-flutter) -->
 
-Flutter Package Manager: A simple cli to manage your app packages.
+> A simple cli to manage your app packages.
 
 **Features:**
 
