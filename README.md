@@ -20,9 +20,32 @@
 ## Usage
 
 ```bash
-# Install the newest version, and apply caret syntax
-$ fpm add my-package
+$ fpm top
+$ fpm favorites
+$ fpm search html
+$ fpm search html --verbose
+```
 
+```bash
+❯ fpm --help     
+Flutter Version Management: A cli to manage Flutter packages.
+
+Usage: fpm <command> [arguments]
+
+Global options:
+-h, --help       Print this usage information.
+    --verbose    Print verbose output.
+
+Available commands:
+  add         Add package SDK Version
+  favorites   List of the flutter favorite packages
+  search      Search dart packages
+  top         List the top used dart packages
+
+Run "fpm help <command>" for more information about a command.
+```
+
+```bash
 # Install a specific version
 $ fpm add my-package@^1.0.0
 $ fpm add my-package@0.0.4+25
