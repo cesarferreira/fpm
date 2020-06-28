@@ -4,12 +4,14 @@
 [![Maintenance](https://img.shields.io/badge/dynamic/json?color=blue&label=maintenance&query=maintenance&url=http://www.pubscore.gq/all?package=fpm&style=flat-square)](https://pub.dev/help#maintenance)
 [![Health](https://img.shields.io/badge/dynamic/json?color=blue&label=health&query=health&url=http://www.pubscore.gq/all?package=fpm&style=flat-square)](https://pub.dev/help#health)![Coverage](https://raw.githubusercontent.com/leoafarias/fpm/master/coverage_badge.svg?sanitize=true) [![Github All Contributors](https://img.shields.io/github/all-contributors/leoafarias/fpm?style=flat-square)](https://github.com/cesarferreira/fpm/graphs/contributors) [![MIT Licence](https://img.shields.io/github/license/leoafarias/fpm?style=flat-square&longCache=true)](https://opensource.org/licenses/mit-license.php) [![Awesome Flutter](https://img.shields.io/badge/awesome-flutter-purple?longCache=true&style=flat-square)](https://github.com/Solido/awesome-flutter) -->
 
-> A simple cli to manage your app packages.
+> Flutter Package Manager, powerfull package management via CLI, add/search/top/favorite packages!
 
-**Features:**
+<img src="extras/verbose.png" width="100%">
+
+<!-- **Features:**
 
 - Lightweight
-- Faster than googling
+- Faster than googling -->
 
 ## Install
 
@@ -19,12 +21,28 @@
 
 ## Usage
 
+Without verbose
+
+<img src="extras/slim.png" width="100%">
+
+
 ```bash
 $ fpm top
 $ fpm favorites
 $ fpm search html
 $ fpm search html --verbose
 ```
+
+
+```bash
+# Install a specific version
+$ fpm add http
+
+# Install to dev_dependencies
+$ fpm add --dev http
+```
+
+
 
 ```bash
 ❯ fpm --help     
@@ -43,26 +61,4 @@ Available commands:
   top         List the top used dart packages
 
 Run "fpm help <command>" for more information about a command.
-```
-
-```bash
-# Install a specific version
-$ fpm add my-package@^1.0.0
-$ fpm add my-package@0.0.4+25
-$ fpm add "my-package@>=2.0.0 <3.0.0"
-
-# Install a Git dependency
-$ fpm add my-package@git://path/to/repo.git
-
-# Specify a commit or ref
-$ fpm add my-package@git://path/to/repo.git#bleeding-edge
-
-# Install a local package
-$ fpm add my-package@path:/Users/john/Source/Dart/pkg
-
-# Install multiple packages
-$ fpm add my-package my-other-package yet-another-package
-
-# Install to dev_dependencies
-$ fpm add --dev http test my-package@git://repo#dev
 ```
