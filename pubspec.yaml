@@ -1,6 +1,6 @@
 name: fpm
-description: Flutter Package Manager
-version: 0.1.0
+description: Flutter Package Manager, powerfull package management via CLI, add/search/top/favorite packages!
+version: 0.2.0
 homepage: https://github.com/cesarferreira/fpm
 
 environment:

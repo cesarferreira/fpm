@@ -1,4 +1,3 @@
-import 'package:ansicolor/ansicolor.dart';
 import 'package:fpm/package.dart';
 import 'package:http/http.dart' as http;
 import 'package:html/parser.dart';

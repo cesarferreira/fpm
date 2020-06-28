@@ -17,6 +17,7 @@ class TopCommand extends Command {
   @override
   void run() async {
     var packages = await Parser.parseWebsite('https://pub.dev/packages');
-      PrettyPrinter.displayPackages(packages, argResults.arguments.contains('--verbose'));
+    PrettyPrinter.displayPackages(
+        packages, argResults.arguments.contains('--verbose'));
   }
 }

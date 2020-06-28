@@ -12,19 +12,19 @@ class SearchCommand extends Command {
   final description = 'Search dart packages';
 
   /// Constructor
-  SearchCommand() {}
+  SearchCommand();
 
   @override
   void run() async {
-
     if (argResults.rest.isEmpty) {
       throw Exception('Please provide a search term. search <query>');
     } else {
       var q = argResults.rest[0].toLowerCase();
 
       var packages = await Parser.parseWebsite('https://pub.dev/packages?q=$q');
-      
-      PrettyPrinter.displayPackages(packages, argResults.arguments.contains('--verbose'));
+
+      PrettyPrinter.displayPackages(
+          packages, argResults.arguments.contains('--verbose'));
     }
   }
 }
