@@ -4,7 +4,6 @@ import 'package:fpm/commands/add.dart';
 import 'package:fpm/commands/favorites.dart';
 import 'package:fpm/commands/search.dart';
 import 'package:fpm/commands/top.dart';
-import 'package:fpm/utils/logger.dart';
 import 'package:fpm/utils/runner.dart';
 
 /// Runs FVM
@@ -19,9 +18,9 @@ Future<void> main(List<String> args) async {
 
   return await runner.run(args).catchError((exc, st) {
     if (exc is String) {
-      logger.stdout(exc);
+      print(exc);
     } else {
-      logger.stderr('⚠️  ${exc?.message as String}');
+      print('⚠️  ${exc?.message as String}');
       if (args.contains('--verbose')) {
         print(st);
         throw exc;
