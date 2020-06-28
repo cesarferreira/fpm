@@ -16,13 +16,15 @@ class SearchCommand extends Command {
 
   @override
   void run() async {
-    if (argResults.arguments.isEmpty) {
-      print("You're MISSING ARGS");
+
+    if (argResults.rest.isEmpty) {
+      throw Exception('Please provide a search term. search <query>');
     } else {
-      var q = argResults.arguments[0].toLowerCase();
+      var q = argResults.rest[0].toLowerCase();
 
       var packages = await Parser.parseWebsite('https://pub.dev/packages?q=$q');
-      PrettyPrinter.printShortVersion(packages);
+      
+      PrettyPrinter.displayPackages(packages, argResults.arguments.contains('--verbose'));
     }
   }
 }

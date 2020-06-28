@@ -16,7 +16,10 @@ class FavoritesCommand extends Command {
 
   @override
   void run() async {
-    var packages = await Parser.parseWebsite('https://pub.dev/flutter/favorites');
-    PrettyPrinter.printShortVersion(packages);
+    var packages =
+        await Parser.parseWebsite('https://pub.dev/flutter/favorites');
+
+    PrettyPrinter.displayPackages(
+        packages, argResults.arguments.contains('--verbose'));
   }
 }
