@@ -13,12 +13,6 @@ class Parser {
     var packages = <Package>[];
 
     lis.forEach((li) {
-      var title = li.getElementsByTagName('h3 a')[0].text.trim();
-      var description = li.getElementsByClassName('description')[0].text.trim();
-      var version = li.getElementsByTagName('p a')[0].text.trim();
-      var url = 'https://pub.dev' +
-          li.getElementsByTagName('p a')[0].attributes['href'];
-      var updatedAt = li.getElementsByTagName('p span')[0].text.trim();
       var scoreRaw = li.getElementsByTagName('a')[0].text.trim();
 
       var score = -1;
@@ -28,16 +22,26 @@ class Parser {
         // scoreRaw;
       }
 
-      var p = Package(
-        title: title,
-        description: description,
-        url: url,
-        version: version,
-        updatedAt: updatedAt,
-        score: score,
-      );
+      if (score != -1) {
+        var title = li.getElementsByTagName('h3 a')[0].text.trim();
+        var description =
+            li.getElementsByClassName('description')[0].text.trim();
+        var version = li.getElementsByTagName('p a')[0].text.trim();
+        var url = 'https://pub.dev' +
+            li.getElementsByTagName('p a')[0].attributes['href'];
+        var updatedAt = li.getElementsByTagName('p span')[0].text.trim();
 
-      packages.add(p);
+        var p = Package(
+          title: title,
+          description: description,
+          url: url,
+          version: version,
+          updatedAt: updatedAt,
+          score: score,
+        );
+
+        packages.add(p);
+      }
     });
 
     return packages;
